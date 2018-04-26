@@ -6,7 +6,7 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = Movie.new
+  movie = Movie.create
   movie.title = "This is a title."
   movie.save
 end
@@ -19,9 +19,7 @@ def can_be_created_with_a_hash_of_attributes
       lead: "Paul Newman",
       in_theaters: false
   }
-  movie = Movie.new(attributes)
-  movie.save
-  movie
+  movie = Movie.create(attributes)
 end
 
 def can_be_created_in_a_block(args = {title: "Home Alone", release_date: 1990})
@@ -44,7 +42,7 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  Movie.find_by(id:1).title
+  Movie.find_by(id: 1).title
 end
 
 def can_find_by_multiple_attributes
